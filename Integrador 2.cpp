@@ -15,7 +15,7 @@ void condiciones(){
 	y en el lugar se encuentra una 'M' o 'E' estas no seran movidas de su lugar*/
 }
 void menores(){
-	/*condiciones especiales para menores de 2 años, buscar pares(si (((4*fila)-4)+I) 
+	/*condiciones especiales para menores de 2 aï¿½os, buscar pares(si (((4*fila)-4)+I) 
 	da par preguntar por ese lugar si esta libre y por el que le sigue, si ambos estan 
 	libres ubicarlos ahi, sino buscar el siguiente numero par y preguntar de nuevo)*/
 }
@@ -28,7 +28,7 @@ int main ()
 	
 	int fila,asi,I;
 	char a,c[6]="Atras",b[9]="Adelante";
-	printf("Ingrece la Fila: ");
+	printf("Ingrese la Fila: ");
 	scanf("%d",&fila);
 	/*prueba para ver si da bien la ubicacion, 'asi' ej. if (res[asi]=='L') -si dar ubicacion
 	-no buscar otra o informar que ya esta ocupada*/
