@@ -15,7 +15,7 @@ void condiciones(){
 	y en el lugar se encuentra una 'M' o 'E' estas no seran movidas de su lugar*/
 }
 void menores(){
-	/*condiciones especiales para menores de 2 a�os, buscar pares(si (((4*fila)-4)+I) 
+	/*condiciones especiales para menores de 2 años, buscar pares(si (((4*fila)-4)+I) 
 	da par preguntar por ese lugar si esta libre y por el que le sigue, si ambos estan 
 	libres ubicarlos ahi, sino buscar el siguiente numero par y preguntar de nuevo)*/
 }
