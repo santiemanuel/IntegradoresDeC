@@ -33,7 +33,7 @@ int main ()
 	/*prueba para ver si da bien la ubicacion, 'asi' ej. if (res[asi]=='L') -si dar ubicacion
 	-no buscar otra o informar que ya esta ocupada*/
 	I=-1;
-	while (I<3){
+	while (I<=3){
 	//I se mueve entre 0 y 3
 	I++;
 	asi=(((4*fila)-4)+I);
