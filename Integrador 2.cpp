@@ -3,9 +3,12 @@
 #include <stdlib.h>
 
 
-void carga_res(){
+void carga_res(char* cadena);
 	//cargar la lista completa con 'L'(libre)
-}
+
+char estado_asi(int pasi, int fila, char *cadena);
+	//Devuelve si el asiento esta libre o no
+
 void carga_dat(){
 	//cargar los datos de los pasajeros (los datos se usan en el momento)
 }
@@ -26,13 +29,21 @@ void reserva(){
 int main () 
 {
 	
-	int fila,asi,I;
-	char a,c[6]="Atras",b[9]="Adelante";
-	printf("Ingrese la Fila: ");
-	scanf("%d",&fila);
-	/*prueba para ver si da bien la ubicacion, 'asi' ej. if (res[asi]=='L') -si dar ubicacion
-	-no buscar otra o informar que ya esta ocupada*/
-	I=-1;
+	int fila,asi,pov,I;
+	char Easi,a,c[6]="Atras",b[9]="Adelante",Res[101]=""; //Easi estado de asiento
+	carga_res(Res);
+	do{
+		printf("Ingrese la Fila: ");
+		scanf("%d",&fila);
+		printf("Pasillo(1) o Ventanilla(2): ");
+		scanf("%d", &pov);
+		Easi=estado_asi(pov, fila, Res);
+		if (Easi == 'R')
+			printf("Asiento ya reservado previamente Elija otro lugar");
+	//prueba para ver si da bien la ubicacion, 'asi' ej. if (res[asi]=='L') -si dar ubicacion
+	//-no buscar otra o informar que ya esta ocupada
+	} while(Easi == 'R');
+	I=0;
 	while (I<=3){
 	//I se mueve entre 0 y 3
 	I++;
@@ -52,3 +63,33 @@ int main ()
 	}
 	return 0;
 }
+
+void carga_res(char *cadena){
+	int I;
+	for (I=1;I<=100;I++){
+		strcat(cadena, "L");
+	}
+	//cargar la lista completa con 'L'(libre)
+}
+
+char estado_asi(int pasi, int fila, char *cadena){
+	
+	int posa[2];
+	char est1, est2;
+	
+	switch(pasi){
+	case 1:
+		posa[0]=(4*fila)-3;
+		posa[1]=(4*fila)-2;
+	case 2:
+		posa[0]=(4*fila)-4;
+		posa[1]=4*fila;
+	}
+	est1=cadena[posa[0]];
+	est2=cadena[posa[1]];
+	if ((est1 == 'L') || (est2 == 'L'))
+		return 'L';
+	else
+		return 'R';
+}
+
